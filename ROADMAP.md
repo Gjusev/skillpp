@@ -1,7 +1,7 @@
 # Roadmap
 
-Where this repo is and what's next. Current state: items 1–3 done and
-measured, item 4 first slice done (see README "Honest status").
+Where this repo is and what's next. Current state: every item (1–5) has a
+done, measured first slice — see README "Measured results" and results/.
 
 ## Done
 
