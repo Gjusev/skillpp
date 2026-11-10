@@ -1,0 +1,17 @@
+[project]
+name = "skillpp"
+version = "0.1.0"
+description = "First open implementation of Skill++ (arXiv:2611.00544): routing-aware skill refinement via metadata rewriting. Test whether rewriting a new skill's metadata against its closest installed predecessor fixes skill-router interference."
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["skillpp*"]
