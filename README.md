@@ -106,6 +106,13 @@ results/         committed benchmark output (matrix.md / scaled_matrix.md /
   descriptions still installed, so late-session accuracy depends on the
   rewrite history. Means and sign directions were stable across our runs;
   per-session numbers are noisy.
+- **The rewriter assumes the draft is truthful.** Fed a draft that copies
+  the predecessor's description verbatim (the Jaccard-1.00 real-world
+  pathology), it produced a polished, confident, WRONG refinement — it never
+  sees the skill body (found while building the skill-issue integration).
+- **In a live agent, draft-vs-refined metadata made no difference on a trap
+  task** (Claude Code headless via skill-issue, n=1×4): the agent routed
+  correctly under sloppy and refined metadata alike.
 
 ## Honest status
 
@@ -152,6 +159,16 @@ whole sentence. Caveats: scaled fixtures and their probes were authored
 together (favors the mechanism); real-library probes are LLM-generated from
 the descriptions themselves; rewriter run-to-run variance as noted in
 Findings.
+
+**4. skill-issue integration** (`results/skill_issue.md`, ROADMAP item 5
+first slice): skillpp generates skill-issue experiments isolating the
+metadata axis — same task, same trap library, B's description draft vs
+skillpp-refined; an external verifier checks the TASK outcome (not just
+routing). Measured (Claude Code headless, 1 rep per cell): the agent routed
+correctly under both metadatas in all four cells — no routing failure
+occurred to fix, consistent with the router matrix above. The integration
+itself is the deliverable: metadata → routing → task is now one measurable
+chain, ready for repetitions and weaker routing agents.
 
 ## Citation
 

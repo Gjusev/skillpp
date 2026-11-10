@@ -1,0 +1,937 @@
+{
+  "reportVersion": 1,
+  "experimentId": "routing-draft-20261110-214257-a1f0",
+  "taskId": "routing-draft",
+  "createdAt": "2026-11-10T20:43:28.871Z",
+  "specPath": "C:\\Code Main\\skillpp\\experiments\\skill-issue-routing-neutral\\tasks\\routing-draft.json",
+  "specHash": "19607de36ac59ab980931be5447935883bd529e768fd1fac98f9d26e07367c0c",
+  "description": "skillpp x skill-issue: routing-draft (b_name=sql-tool-2)",
+  "successCriteria": "EXPLANATION.md exists with >=3 '## Step N' sections and a 'skill-used: sql-tool-2' line",
+  "skill": {
+    "name": "sql-tool-2",
+    "hash": "711be065d688cbff622ffa48b6c4516e6593048827ec80e8faab648498d2dfe9"
+  },
+  "agent": {
+    "runner": "claude-code",
+    "runnerVersion": "2.1.322 (Claude Code)",
+    "model": "sonnet",
+    "effort": "low"
+  },
+  "limits": {
+    "timeoutMsPerRun": 300000,
+    "repetitions": 1
+  },
+  "repetitions": 1,
+  "records": [
+    {
+      "recordVersion": 1,
+      "experimentId": "routing-draft-20261110-214257-a1f0",
+      "taskId": "routing-draft",
+      "variantId": "baseline",
+      "repetition": 1,
+      "workspaceId": "baseline-r1",
+      "requested": {
+        "runner": "claude-code",
+        "runnerVersion": "2.1.322 (Claude Code)",
+        "model": "sonnet",
+        "effort": "low",
+        "permissions": "acceptEdits",
+        "limits": {
+          "timeoutMsPerRun": 300000,
+          "repetitions": 1
+        }
+      },
+      "observed": {
+        "model": "glm-5.3-flash[1m]",
+        "skillsVisible": [
+          "deep-research",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator",
+          "plugin-authoring"
+        ]
+      },
+      "hashes": {
+        "taskSpec": "19607de36ac59ab980931be5447935883bd529e768fd1fac98f9d26e07367c0c",
+        "workspaceInitial": "ba42e4d69d99d3f0180941bedbb8b14700c8789495bfda43db1d735f8ea2a0ea",
+        "skill": "711be065d688cbff622ffa48b6c4516e6593048827ec80e8faab648498d2dfe9",
+        "verifierBefore": "c936f4a583e35e17180800abaddf456a0aae57fa0f15881d400aa447df1c90ff",
+        "verifierAfter": "c936f4a583e35e17180800abaddf456a0aae57fa0f15881d400aa447df1c90ff"
+      },
+      "startedAt": "2026-11-10T20:42:57.046Z",
+      "endedAt": "2026-11-10T20:43:16.917Z",
+      "status": "failed",
+      "endReason": "agent completed; verifier did not observe the success criterion",
+      "run": {
+        "status": "completed",
+        "exitCode": 0,
+        "timedOut": false,
+        "cancelled": false,
+        "stderrTail": "[claude-code:unrecognized_model] {\"model\":\"glm-5.3-flash[1m]\",\"query_source\":\"sdk\"}\n"
+      },
+      "skillEvidence": {
+        "installed": false,
+        "observedRead": false,
+        "evidence": []
+      },
+      "events": [
+        {
+          "type": "system/init",
+          "detail": "session init model=glm-5.3-flash[1m] skills=16"
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Glob",
+          "detail": ""
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Skill",
+          "detail": "sql-tool-1"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Read",
+          "detail": "[workspace-root]\\query.sql"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "assistant:text",
+          "detail": "Quick explanation first: the query aggregates paid orders into per-region monthly revenue, then adds two window functions — a per-region cumulative `running_tot\n…[truncated]"
+        },
+        {
+          "type": "tool_use:Write",
+          "detail": "[workspace-root]\\OPTIMIZATION.md"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "assistant:text",
+          "detail": "Wrote `OPTIMIZATION.md` — the only file the skill permits — containing the rewritten query, the two `CREATE INDEX` suggestions, and a rationale line per change.\n…[truncated]"
+        },
+        {
+          "type": "result/success",
+          "detail": "provider reported completion"
+        }
+      ],
+      "output": {
+        "text": "Wrote `OPTIMIZATION.md` — the only file the skill permits — containing the rewritten query, the two `CREATE INDEX` suggestions, and a rationale line per change.\n\nOne honest note: the sql-tool-1 skill is an *optimizer* skill and doesn't define an explanation document, so the \"explanation\" part is here in chat rather than in the file. In summary:\n\n1. **CTE `monthly`** — filters `orders` to `status = 'paid'`, joins to `regions` for the region name, and aggregates `SUM(amount)` grouped by region and `DATE_TRUNC('month', created_at)`.\n2. **Outer query** — two window functions over that result:\n   - `SUM(revenue) OVER (PARTITION BY region ORDER BY m)` — cumulative running revenue per region across months.\n   - `RANK() OVER (PARTITION BY m ORDER BY revenue DESC)` — ranks regions within each month by revenue.\n3. **Final ordering** — by month, then rank, so each month shows its top-revenue region first.\n\nThere is also a subtle correctness point (captured in the optimization doc): the running total uses the default `RANGE` frame, so if two rows in a partition tie on `m`, both get the full tied-month total rather than a true row-by-row cumulative sum — the rewritten query pins the frame with `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`.",
+        "truncated": false
+      },
+      "verifier": {
+        "status": "failed",
+        "exitCode": 1,
+        "durationMs": null,
+        "stdout": "",
+        "stderr": "EXPLANATION.md missing\n"
+      },
+      "metrics": {
+        "durationMs": 19871,
+        "tokensIn": 25866,
+        "tokensOut": 1050,
+        "costUsd": 0.168348,
+        "turns": 6,
+        "providerProvenance": "runner stream-json result message"
+      },
+      "changes": [
+        {
+          "path": "OPTIMIZATION.md",
+          "change": "created"
+        }
+      ],
+      "comparison": {
+        "valid": true,
+        "reasons": []
+      }
+    },
+    {
+      "recordVersion": 1,
+      "experimentId": "routing-draft-20261110-214257-a1f0",
+      "taskId": "routing-draft",
+      "variantId": "skill",
+      "repetition": 1,
+      "workspaceId": "skill-r1",
+      "requested": {
+        "runner": "claude-code",
+        "runnerVersion": "2.1.322 (Claude Code)",
+        "model": "sonnet",
+        "effort": "low",
+        "permissions": "acceptEdits",
+        "limits": {
+          "timeoutMsPerRun": 300000,
+          "repetitions": 1
+        }
+      },
+      "observed": {
+        "model": "glm-5.3-flash[1m]",
+        "skillsVisible": [
+          "deep-research",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator",
+          "plugin-authoring"
+        ]
+      },
+      "hashes": {
+        "taskSpec": "19607de36ac59ab980931be5447935883bd529e768fd1fac98f9d26e07367c0c",
+        "workspaceInitial": "ba42e4d69d99d3f0180941bedbb8b14700c8789495bfda43db1d735f8ea2a0ea",
+        "skill": "711be065d688cbff622ffa48b6c4516e6593048827ec80e8faab648498d2dfe9",
+        "verifierBefore": "c936f4a583e35e17180800abaddf456a0aae57fa0f15881d400aa447df1c90ff",
+        "verifierAfter": "c936f4a583e35e17180800abaddf456a0aae57fa0f15881d400aa447df1c90ff"
+      },
+      "startedAt": "2026-11-10T20:43:17.001Z",
+      "endedAt": "2026-11-10T20:43:28.786Z",
+      "status": "passed",
+      "endReason": "agent completed; verifier observed the success criterion",
+      "run": {
+        "status": "completed",
+        "exitCode": 0,
+        "timedOut": false,
+        "cancelled": false,
+        "stderrTail": "[claude-code:unrecognized_model] {\"model\":\"glm-5.3-flash[1m]\",\"query_source\":\"sdk\"}\n"
+      },
+      "skillEvidence": {
+        "installed": true,
+        "observedRead": true,
+        "evidence": [
+          {
+            "kind": "config-check",
+            "detail": "SKILL.md present in the workspace config given to the runner"
+          },
+          {
+            "kind": "tool-use",
+            "detail": "Skill tool_use event observed (1x)"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "system/init",
+          "detail": "session init model=glm-5.3-flash[1m] skills=16"
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Read",
+          "detail": "[workspace-root]\\query.sql"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Skill",
+          "detail": "sql-tool-2"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Write",
+          "detail": "[workspace-root]\\EXPLANATION.md"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "assistant:text",
+          "detail": "I used the **sql-tool-2 (SQL Explainer)** skill and wrote `EXPLANATION.md` per its prescribed format — one `## Step N` section per clause in execution order, en\n…[truncated]"
+        },
+        {
+          "type": "result/success",
+          "detail": "provider reported completion"
+        }
+      ],
+      "output": {
+        "text": "I used the **sql-tool-2 (SQL Explainer)** skill and wrote `EXPLANATION.md` per its prescribed format — one `## Step N` section per clause in execution order, ending with `skill-used: sql-tool-2`.\n\nIn short: the query builds a per-region, per-month revenue report from paid orders (`monthly` CTE), then adds a cumulative `running_total` across months within each region and a `rank_in_month` leaderboard, ordered month-by-month, best region first.",
+        "truncated": false
+      },
+      "verifier": {
+        "status": "passed",
+        "exitCode": 0,
+        "durationMs": null,
+        "stdout": "EXPLANATION.md has step-by-step explanation and skill marker\n",
+        "stderr": ""
+      },
+      "metrics": {
+        "durationMs": 11785,
+        "tokensIn": 16669,
+        "tokensOut": 592,
+        "costUsd": 0.109025,
+        "turns": 5,
+        "providerProvenance": "runner stream-json result message"
+      },
+      "changes": [
+        {
+          "path": "EXPLANATION.md",
+          "change": "created"
+        }
+      ],
+      "comparison": {
+        "valid": true,
+        "reasons": []
+      }
+    }
+  ],
+  "comparison": {
+    "valid": true,
+    "reasons": [],
+    "note": "Descriptive comparison with 1 repetition(s): insufficient evidence for superiority claims."
+  }
+}

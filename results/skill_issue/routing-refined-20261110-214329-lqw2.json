@@ -1,0 +1,630 @@
+{
+  "reportVersion": 1,
+  "experimentId": "routing-refined-20261110-214329-lqw2",
+  "taskId": "routing-refined",
+  "createdAt": "2026-11-10T20:44:02.109Z",
+  "specPath": "C:\\Code Main\\skillpp\\experiments\\skill-issue-routing-neutral\\tasks\\routing-refined.json",
+  "specHash": "5a3e8013438e2770f119a23e89e936fe0357227c4877691ab49ffa8cd76bf863",
+  "description": "skillpp x skill-issue: routing-refined (b_name=sql-tool-2)",
+  "successCriteria": "EXPLANATION.md exists with >=3 '## Step N' sections and a 'skill-used: sql-tool-2' line",
+  "skill": {
+    "name": "sql-tool-2",
+    "hash": "d460fca3307c69c87f4ac364094a2fa6c7a81cf331f0be748887d1257d3bb10c"
+  },
+  "agent": {
+    "runner": "claude-code",
+    "runnerVersion": "2.1.322 (Claude Code)",
+    "model": "sonnet",
+    "effort": "low"
+  },
+  "limits": {
+    "timeoutMsPerRun": 300000,
+    "repetitions": 1
+  },
+  "repetitions": 1,
+  "records": [
+    {
+      "recordVersion": 1,
+      "experimentId": "routing-refined-20261110-214329-lqw2",
+      "taskId": "routing-refined",
+      "variantId": "baseline",
+      "repetition": 1,
+      "workspaceId": "baseline-r1",
+      "requested": {
+        "runner": "claude-code",
+        "runnerVersion": "2.1.322 (Claude Code)",
+        "model": "sonnet",
+        "effort": "low",
+        "permissions": "acceptEdits",
+        "limits": {
+          "timeoutMsPerRun": 300000,
+          "repetitions": 1
+        }
+      },
+      "observed": {
+        "model": "glm-5.3-flash[1m]",
+        "skillsVisible": [
+          "deep-research",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator",
+          "plugin-authoring"
+        ]
+      },
+      "hashes": {
+        "taskSpec": "5a3e8013438e2770f119a23e89e936fe0357227c4877691ab49ffa8cd76bf863",
+        "workspaceInitial": "ba42e4d69d99d3f0180941bedbb8b14700c8789495bfda43db1d735f8ea2a0ea",
+        "skill": "d460fca3307c69c87f4ac364094a2fa6c7a81cf331f0be748887d1257d3bb10c",
+        "verifierBefore": "c936f4a583e35e17180800abaddf456a0aae57fa0f15881d400aa447df1c90ff",
+        "verifierAfter": "c936f4a583e35e17180800abaddf456a0aae57fa0f15881d400aa447df1c90ff"
+      },
+      "startedAt": "2026-11-10T20:43:29.171Z",
+      "endedAt": "2026-11-10T20:43:48.349Z",
+      "status": "failed",
+      "endReason": "agent completed; verifier did not observe the success criterion",
+      "run": {
+        "status": "completed",
+        "exitCode": 0,
+        "timedOut": false,
+        "cancelled": false,
+        "stderrTail": "[claude-code:unrecognized_model] {\"model\":\"glm-5.3-flash[1m]\",\"query_source\":\"sdk\"}\n"
+      },
+      "skillEvidence": {
+        "installed": false,
+        "observedRead": false,
+        "evidence": []
+      },
+      "events": [
+        {
+          "type": "system/init",
+          "detail": "session init model=glm-5.3-flash[1m] skills=16"
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Skill",
+          "detail": "sql-tool-1"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Read",
+          "detail": "[workspace-root]\\query.sql"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Write",
+          "detail": "[workspace-root]\\OPTIMIZATION.md"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "assistant:text",
+          "detail": "Done. I invoked the `sql-tool-1` (SQL Optimizer) skill and wrote exactly the document it prescribes — `OPTIMIZATION.md` in the workspace, containing the rewritt\n…[truncated]"
+        },
+        {
+          "type": "result/success",
+          "detail": "provider reported completion"
+        }
+      ],
+      "output": {
+        "text": "Done. I invoked the `sql-tool-1` (SQL Optimizer) skill and wrote exactly the document it prescribes — `OPTIMIZATION.md` in the workspace, containing the rewritten query, index suggestions, and one-line rationales. No other files were written.\n\nQuick summary of the query itself: `query.sql` aggregates paid orders into monthly revenue per region, then adds a per-region running total and a per-month revenue rank. The key optimizations applied: aggregate on `region_id` and defer the join to `regions` until after aggregation (fewer rows through the join), add a covering index `(status, created_at, region_id, amount)` so the aggregation reads only the index, and pin the running-total frame to `ROWS` for linear-time window evaluation — all while keeping identical output ordering.",
+        "truncated": false
+      },
+      "verifier": {
+        "status": "failed",
+        "exitCode": 1,
+        "durationMs": null,
+        "stdout": "",
+        "stderr": "EXPLANATION.md missing\n"
+      },
+      "metrics": {
+        "durationMs": 19177,
+        "tokensIn": 4637,
+        "tokensOut": 959,
+        "costUsd": 0.070552,
+        "turns": 5,
+        "providerProvenance": "runner stream-json result message"
+      },
+      "changes": [
+        {
+          "path": "OPTIMIZATION.md",
+          "change": "created"
+        }
+      ],
+      "comparison": {
+        "valid": true,
+        "reasons": []
+      }
+    },
+    {
+      "recordVersion": 1,
+      "experimentId": "routing-refined-20261110-214329-lqw2",
+      "taskId": "routing-refined",
+      "variantId": "skill",
+      "repetition": 1,
+      "workspaceId": "skill-r1",
+      "requested": {
+        "runner": "claude-code",
+        "runnerVersion": "2.1.322 (Claude Code)",
+        "model": "sonnet",
+        "effort": "low",
+        "permissions": "acceptEdits",
+        "limits": {
+          "timeoutMsPerRun": 300000,
+          "repetitions": 1
+        }
+      },
+      "observed": {
+        "model": "glm-5.3-flash[1m]",
+        "skillsVisible": [
+          "sql-tool-2",
+          "deep-research",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator",
+          "plugin-authoring"
+        ]
+      },
+      "hashes": {
+        "taskSpec": "5a3e8013438e2770f119a23e89e936fe0357227c4877691ab49ffa8cd76bf863",
+        "workspaceInitial": "ba42e4d69d99d3f0180941bedbb8b14700c8789495bfda43db1d735f8ea2a0ea",
+        "skill": "d460fca3307c69c87f4ac364094a2fa6c7a81cf331f0be748887d1257d3bb10c",
+        "verifierBefore": "c936f4a583e35e17180800abaddf456a0aae57fa0f15881d400aa447df1c90ff",
+        "verifierAfter": "c936f4a583e35e17180800abaddf456a0aae57fa0f15881d400aa447df1c90ff"
+      },
+      "startedAt": "2026-11-10T20:43:48.455Z",
+      "endedAt": "2026-11-10T20:44:02.041Z",
+      "status": "passed",
+      "endReason": "agent completed; verifier observed the success criterion",
+      "run": {
+        "status": "completed",
+        "exitCode": 0,
+        "timedOut": false,
+        "cancelled": false,
+        "stderrTail": "[claude-code:unrecognized_model] {\"model\":\"glm-5.3-flash[1m]\",\"query_source\":\"sdk\"}\n"
+      },
+      "skillEvidence": {
+        "installed": true,
+        "observedRead": true,
+        "evidence": [
+          {
+            "kind": "config-check",
+            "detail": "SKILL.md present in the workspace config given to the runner"
+          },
+          {
+            "kind": "tool-use",
+            "detail": "Skill tool_use event observed (1x)"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "system/init",
+          "detail": "session init model=glm-5.3-flash[1m] skills=17"
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Glob",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Skill",
+          "detail": "sql-tool-2"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Read",
+          "detail": "[workspace-root]\\query.sql"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Write",
+          "detail": "[workspace-root]\\EXPLANATION.md"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "assistant:text",
+          "detail": "Used the `sql-tool-2` (SQL Explainer) skill. It wrote `EXPLANATION.md` in the workspace with a `## Step N` section per clause in execution order: 1. **CTE `mont\n…[truncated]"
+        },
+        {
+          "type": "result/success",
+          "detail": "provider reported completion"
+        }
+      ],
+      "output": {
+        "text": "Used the `sql-tool-2` (SQL Explainer) skill. It wrote `EXPLANATION.md` in the workspace with a `## Step N` section per clause in execution order:\n\n1. **CTE `monthly`** — joins `orders` to `regions`, filters to `status = 'paid'`\n2. **Aggregation** — groups by region × month (`DATE_TRUNC`), sums `amount` as `revenue`\n3. **`running_total`** — cumulative `SUM(revenue) OVER (PARTITION BY region ORDER BY m)`\n4. **`rank_in_month`** — `RANK()` of regions by revenue within each month, descending\n5. **Final ordering** — by month, then revenue rank within the month\n\nThe document ends with the required `skill-used: sql-tool-2` line, and no other files were written.",
+        "truncated": false
+      },
+      "verifier": {
+        "status": "passed",
+        "exitCode": 0,
+        "durationMs": null,
+        "stdout": "EXPLANATION.md has step-by-step explanation and skill marker\n",
+        "stderr": ""
+      },
+      "metrics": {
+        "durationMs": 13586,
+        "tokensIn": 16744,
+        "tokensOut": 648,
+        "costUsd": 0.11720000000000001,
+        "turns": 6,
+        "providerProvenance": "runner stream-json result message"
+      },
+      "changes": [
+        {
+          "path": "EXPLANATION.md",
+          "change": "created"
+        }
+      ],
+      "comparison": {
+        "valid": true,
+        "reasons": []
+      }
+    }
+  ],
+  "comparison": {
+    "valid": true,
+    "reasons": [],
+    "note": "Descriptive comparison with 1 repetition(s): insufficient evidence for superiority claims."
+  }
+}

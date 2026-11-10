@@ -1,0 +1,33 @@
+{
+  "specVersion": 1,
+  "id": "routing-refined",
+  "description": "skillpp x skill-issue: routing-refined (b_name=sql-tool-2)",
+  "task": {
+    "prompt": "Explain the SQL query in query.sql. Use the relevant installed skill and produce exactly the document that skill prescribes.",
+    "workspaceCopyFrom": "../workspaces/base"
+  },
+  "verifier": {
+    "copyFrom": "../verifiers/explanation",
+    "command": [
+      "node",
+      "verify.mjs",
+      "{workspace}"
+    ],
+    "timeoutMs": 20000,
+    "successCriteria": "EXPLANATION.md exists with >=3 '## Step N' sections and a 'skill-used: sql-tool-2' line"
+  },
+  "skill": {
+    "name": "sql-tool-2",
+    "path": "../skills/sql-tool-2-refined"
+  },
+  "agent": {
+    "runner": "claude-code",
+    "model": "sonnet",
+    "effort": "low",
+    "permissions": "acceptEdits"
+  },
+  "limits": {
+    "timeoutMsPerRun": 300000,
+    "repetitions": 1
+  }
+}

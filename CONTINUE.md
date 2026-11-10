@@ -37,28 +37,24 @@ switch providers to "get it working".
 
 ## Current task (do this now)
 
-ROADMAP items 2, 3 and the first slice of 4 are DONE, measured and
-committed (2026-11-10; all numbers in README "Honest status" and results/):
+ROADMAP items 1-5 all have a DONE first slice (2026-11-10; numbers in
+README "Honest status" + results/). Item 5 (skill-issue integration) landed
+last: scripts/skill_issue_demo.py generates skill-issue experiments that
+isolate the metadata axis; results/skill_issue.md has the four measured
+cells (agent routed correctly under draft AND refined metadata — no routing
+failure to fix, n=1 per cell) plus two mechanism findings (name leakage;
+garbage-in-garbage-out refinement when the draft copies the predecessor).
 
-- scaled matrix (results/scaled_matrix.md + scaled_53.md): token-overlap
-  46%->41%, tfidf 52%->56%, glm-5.3-flash 99%->100%, glm-4.6 100%->100%,
-  glm-5.3 100%->100%
-- real-library slice (results/real_library.md, 12 human-written pairs,
-  re-run with the fixed block-scalar frontmatter parser): token-overlap
-  22%->15%, tfidf 38%->35%, glm-5.3-flash 89%->92%
-- decay: token-overlap drafts ~49% -> ~43% early-to-late sessions
-  (results/scaled_matrix.json; direction pinned offline by tests)
+Everything is committed through the item-5 commit. The repo has no
+outstanding task — what follows are the natural next slices, in value order:
 
-Headline: Skill++ rewriting as prescribed helps only LLM-class routers on
-real metadata (+3); it always hurts token-overlap, and hurts tfidf on real
-metadata (helps it on generated fixtures). The paper's 36.4%->76.3% remains
-unreproduced — LLM routers don't degrade at <=36 skills.
-
-Next: ROADMAP item 5 (skill-issue integration) — needs a design decision
-from the author before any code: what counts as "task performance" in
-skill-issue, and how to pair its measurements with routing accuracy.
-Item 4 remainder: scale the real-library bench beyond 12 pairs / probe
-generation other than self-description.
+1. skill-issue repetitions 3-5 per cell (spec limits allow up to 5) and a
+   WEAKER routing agent (small local model via Ollama) — the router class
+   where our matrix says interference actually lives.
+2. Real-library pairs (results/real_library.json) as skill-issue tasks —
+   human-written traps, task-level outcomes.
+3. Scale the real-library bench beyond 12 pairs; probe generation other
+   than self-description (independent probe author).
 
 ## After that
 

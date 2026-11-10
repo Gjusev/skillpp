@@ -1,0 +1,33 @@
+{
+  "specVersion": 1,
+  "id": "routing-draft",
+  "description": "skillpp integration: sql-explainer metadata = draft metadata variant...",
+  "task": {
+    "prompt": "Explain the SQL query in query.sql. Use the relevant installed skill and produce exactly the document that skill prescribes.",
+    "workspaceCopyFrom": "../workspaces/base"
+  },
+  "verifier": {
+    "copyFrom": "../verifiers/explanation",
+    "command": [
+      "node",
+      "verify.mjs",
+      "{workspace}"
+    ],
+    "timeoutMs": 20000,
+    "successCriteria": "EXPLANATION.md exists with >=3 '## Step N' sections and a 'skill-used: sql-explainer' line"
+  },
+  "skill": {
+    "name": "sql-explainer",
+    "path": "../skills/sql-explainer-draft"
+  },
+  "agent": {
+    "runner": "claude-code",
+    "model": "sonnet",
+    "effort": "low",
+    "permissions": "acceptEdits"
+  },
+  "limits": {
+    "timeoutMsPerRun": 300000,
+    "repetitions": 1
+  }
+}

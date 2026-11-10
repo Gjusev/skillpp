@@ -27,6 +27,14 @@ measured, item 4 first slice done (see README "Honest status").
   byte-identical description pair); benched the top 12 pairs
   (results/real_library.md): token-overlap 22%->15%, tfidf 38%->35%,
   glm-5.3-flash 89%->92% — on real metadata only the LLM router benefits.
+- Item 5, first slice — skill-issue integration:
+  scripts/skill_issue_demo.py generates skill-issue experiments isolating
+  the metadata axis (same task, same trap library, draft vs skillpp-refined
+  description; external verifier checks the TASK). Measured n=1x4
+  (results/skill_issue.md): agent routed correctly under both metadatas —
+  no routing failure to fix. Two findings: name leakage defeats the
+  metadata axis unless names are neutral; the rewriter polishes an
+  untruthful draft into confident wrong metadata (it never sees the body).
 
 ## Next (in order)
 

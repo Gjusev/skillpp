@@ -1,0 +1,581 @@
+{
+  "reportVersion": 1,
+  "experimentId": "routing-refined-20261110-213831-z9r2",
+  "taskId": "routing-refined",
+  "createdAt": "2026-11-10T20:39:20.964Z",
+  "specPath": "C:\\Code Main\\skillpp\\experiments\\skill-issue-routing\\tasks\\routing-refined.json",
+  "specHash": "457a1ec3136a5579f4a960d474124a7d563505c6008222fc7601e5afed6d2426",
+  "description": "skillpp integration: sql-explainer metadata = refined metadata variant...",
+  "successCriteria": "EXPLANATION.md exists with >=3 '## Step N' sections and a 'skill-used: sql-explainer' line",
+  "skill": {
+    "name": "sql-explainer",
+    "hash": "47757ac2c03ee9d597f4482f9df67f44e923847f94745a61820b9670b350be49"
+  },
+  "agent": {
+    "runner": "claude-code",
+    "runnerVersion": "2.1.322 (Claude Code)",
+    "model": "sonnet",
+    "effort": "low"
+  },
+  "limits": {
+    "timeoutMsPerRun": 300000,
+    "repetitions": 1
+  },
+  "repetitions": 1,
+  "records": [
+    {
+      "recordVersion": 1,
+      "experimentId": "routing-refined-20261110-213831-z9r2",
+      "taskId": "routing-refined",
+      "variantId": "baseline",
+      "repetition": 1,
+      "workspaceId": "baseline-r1",
+      "requested": {
+        "runner": "claude-code",
+        "runnerVersion": "2.1.322 (Claude Code)",
+        "model": "sonnet",
+        "effort": "low",
+        "permissions": "acceptEdits",
+        "limits": {
+          "timeoutMsPerRun": 300000,
+          "repetitions": 1
+        }
+      },
+      "observed": {
+        "model": "glm-5.3-flash[1m]",
+        "skillsVisible": [
+          "deep-research",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator",
+          "plugin-authoring"
+        ]
+      },
+      "hashes": {
+        "taskSpec": "457a1ec3136a5579f4a960d474124a7d563505c6008222fc7601e5afed6d2426",
+        "workspaceInitial": "ba42e4d69d99d3f0180941bedbb8b14700c8789495bfda43db1d735f8ea2a0ea",
+        "skill": "47757ac2c03ee9d597f4482f9df67f44e923847f94745a61820b9670b350be49",
+        "verifierBefore": "1e3fcad536aa5642b21319fe66609d2e0fd1995a5456cf804883afc1dec609cd",
+        "verifierAfter": "1e3fcad536aa5642b21319fe66609d2e0fd1995a5456cf804883afc1dec609cd"
+      },
+      "startedAt": "2026-11-10T20:38:32.006Z",
+      "endedAt": "2026-11-10T20:38:58.475Z",
+      "status": "failed",
+      "endReason": "agent completed; verifier did not observe the success criterion",
+      "run": {
+        "status": "completed",
+        "exitCode": 0,
+        "timedOut": false,
+        "cancelled": false,
+        "stderrTail": "[claude-code:unrecognized_model] {\"model\":\"glm-5.3-flash[1m]\",\"query_source\":\"sdk\"}\n"
+      },
+      "skillEvidence": {
+        "installed": false,
+        "observedRead": false,
+        "evidence": []
+      },
+      "events": [
+        {
+          "type": "system/init",
+          "detail": "session init model=glm-5.3-flash[1m] skills=16"
+        },
+        {
+          "type": "tool_use:Skill",
+          "detail": "sql-optimizer"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Read",
+          "detail": "[workspace-root]\\query.sql"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Write",
+          "detail": "[workspace-root]\\OPTIMIZATION.md"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "assistant:text",
+          "detail": "I invoked the `sql-optimizer` skill and wrote the document it prescribes: `OPTIMIZATION.md` (rewritten query in a ```sql block, CREATE INDEX suggestions, one li\n…[truncated]"
+        },
+        {
+          "type": "result/success",
+          "detail": "provider reported completion"
+        }
+      ],
+      "output": {
+        "text": "I invoked the `sql-optimizer` skill and wrote the document it prescribes: `OPTIMIZATION.md` (rewritten query in a ```sql block, CREATE INDEX suggestions, one line per change). No other files were written.\n\n**What the query does:**\n\n1. **`monthly` CTE** — joins `orders` to `regions`, filters to `status = 'paid'`, and aggregates `SUM(amount)` grouped by region and calendar month (`DATE_TRUNC('month', created_at)`). Result: one revenue figure per region-month.\n2. **Outer query** — adds two window functions:\n   - `running_total`: cumulative revenue within each region over time (`PARTITION BY region ORDER BY m`).\n   - `rank_in_month`: ranks regions by revenue within each month, highest first.\n3. Final output is ordered by month, then by each month's revenue ranking.\n\nThe optimization (per the skill): filter/aggregate `orders` alone first and join `regions` only after aggregation, group by `region_id` rather than the text `region`, and add two covering indexes so the aggregation runs index-only. Full rationale is in `OPTIMIZATION.md`.",
+        "truncated": false
+      },
+      "verifier": {
+        "status": "failed",
+        "exitCode": 1,
+        "durationMs": null,
+        "stdout": "",
+        "stderr": "EXPLANATION.md missing\n"
+      },
+      "metrics": {
+        "durationMs": 26469,
+        "tokensIn": 24562,
+        "tokensOut": 847,
+        "costUsd": 0.157265,
+        "turns": 5,
+        "providerProvenance": "runner stream-json result message"
+      },
+      "changes": [
+        {
+          "path": "OPTIMIZATION.md",
+          "change": "created"
+        }
+      ],
+      "comparison": {
+        "valid": true,
+        "reasons": []
+      }
+    },
+    {
+      "recordVersion": 1,
+      "experimentId": "routing-refined-20261110-213831-z9r2",
+      "taskId": "routing-refined",
+      "variantId": "skill",
+      "repetition": 1,
+      "workspaceId": "skill-r1",
+      "requested": {
+        "runner": "claude-code",
+        "runnerVersion": "2.1.322 (Claude Code)",
+        "model": "sonnet",
+        "effort": "low",
+        "permissions": "acceptEdits",
+        "limits": {
+          "timeoutMsPerRun": 300000,
+          "repetitions": 1
+        }
+      },
+      "observed": {
+        "model": "glm-5.3-flash[1m]",
+        "skillsVisible": [
+          "deep-research",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator",
+          "plugin-authoring"
+        ]
+      },
+      "hashes": {
+        "taskSpec": "457a1ec3136a5579f4a960d474124a7d563505c6008222fc7601e5afed6d2426",
+        "workspaceInitial": "ba42e4d69d99d3f0180941bedbb8b14700c8789495bfda43db1d735f8ea2a0ea",
+        "skill": "47757ac2c03ee9d597f4482f9df67f44e923847f94745a61820b9670b350be49",
+        "verifierBefore": "1e3fcad536aa5642b21319fe66609d2e0fd1995a5456cf804883afc1dec609cd",
+        "verifierAfter": "1e3fcad536aa5642b21319fe66609d2e0fd1995a5456cf804883afc1dec609cd"
+      },
+      "startedAt": "2026-11-10T20:38:58.573Z",
+      "endedAt": "2026-11-10T20:39:20.902Z",
+      "status": "passed",
+      "endReason": "agent completed; verifier observed the success criterion",
+      "run": {
+        "status": "completed",
+        "exitCode": 0,
+        "timedOut": false,
+        "cancelled": false,
+        "stderrTail": "[claude-code:unrecognized_model] {\"model\":\"glm-5.3-flash[1m]\",\"query_source\":\"sdk\"}\n"
+      },
+      "skillEvidence": {
+        "installed": true,
+        "observedRead": true,
+        "evidence": [
+          {
+            "kind": "config-check",
+            "detail": "SKILL.md present in the workspace config given to the runner"
+          },
+          {
+            "kind": "tool-use",
+            "detail": "Skill tool_use event observed (1x)"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "system/init",
+          "detail": "session init model=glm-5.3-flash[1m] skills=16"
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "system/thinking_tokens",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Skill",
+          "detail": "sql-explainer"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Glob",
+          "detail": ""
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Read",
+          "detail": "[workspace-root]\\query.sql"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "tool_use:Write",
+          "detail": "[workspace-root]\\EXPLANATION.md"
+        },
+        {
+          "type": "tool_result",
+          "detail": ""
+        },
+        {
+          "type": "assistant:text",
+          "detail": "Done. Following the sql-explainer skill, I read `query.sql` and wrote `EXPLANATION.md` with: - **Step 1** — CTE joins `orders` to `regions` and filters to `stat\n…[truncated]"
+        },
+        {
+          "type": "result/success",
+          "detail": "provider reported completion"
+        }
+      ],
+      "output": {
+        "text": "Done. Following the sql-explainer skill, I read `query.sql` and wrote `EXPLANATION.md` with:\n\n- **Step 1** — CTE joins `orders` to `regions` and filters to `status = 'paid'`\n- **Step 2** — aggregates revenue per (region, month) via `DATE_TRUNC('month', ...)`\n- **Step 3** — running total per region (cumulative `SUM(...) OVER (PARTITION BY region ORDER BY m)`, with a note on the default `RANGE ... CURRENT ROW` frame)\n- **Step 4** — `RANK()` of each region against peers within each month\n- **Step 5** — final projection ordered by month, then rank\n\nThe file ends with the prescribed `skill-used: sql-explainer` line, and no other file was written.",
+        "truncated": false
+      },
+      "verifier": {
+        "status": "passed",
+        "exitCode": 0,
+        "durationMs": null,
+        "stdout": "EXPLANATION.md has step-by-step explanation and skill marker\n",
+        "stderr": ""
+      },
+      "metrics": {
+        "durationMs": 22329,
+        "tokensIn": 13523,
+        "tokensOut": 806,
+        "costUsd": 0.10664499999999999,
+        "turns": 6,
+        "providerProvenance": "runner stream-json result message"
+      },
+      "changes": [
+        {
+          "path": "EXPLANATION.md",
+          "change": "created"
+        }
+      ],
+      "comparison": {
+        "valid": true,
+        "reasons": []
+      }
+    }
+  ],
+  "comparison": {
+    "valid": true,
+    "reasons": [],
+    "note": "Descriptive comparison with 1 repetition(s): insufficient evidence for superiority claims."
+  }
+}
