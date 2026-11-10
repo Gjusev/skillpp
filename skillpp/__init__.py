@@ -12,8 +12,10 @@ from .types import Skill, RouteResult
 from .library import SkillLibrary
 from .llm import LLMClient
 from .rewriter import MetadataRewriter
-from .router import BaseRouter, MockRouter, OpenAICompatRouter
+from .router import BaseRouter, MockRouter, TfidfRouter, OpenAICompatRouter
 from .bench import BenchmarkReport, InterferenceBench, Session, run_benchmark
+from .fixtures import base_skills, sessions
+from .scaled import scaled_base_skills, scaled_sessions
 
 __version__ = "0.1.0"
 __all__ = [
@@ -24,9 +26,14 @@ __all__ = [
     "MetadataRewriter",
     "BaseRouter",
     "MockRouter",
+    "TfidfRouter",
     "OpenAICompatRouter",
     "InterferenceBench",
     "Session",
     "BenchmarkReport",
     "run_benchmark",
+    "base_skills",
+    "sessions",
+    "scaled_base_skills",
+    "scaled_sessions",
 ]

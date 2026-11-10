@@ -37,26 +37,31 @@ switch providers to "get it working".
 
 ## Current task (do this now)
 
-ROADMAP.md item 1 (first real-LLM run) is DONE — see results/matrix.md and
-README "Honest status" (measured 2026-11-10: glm-5.3-flash and glm-4.6 both
-route the shipped fixtures at 100% before and after refinement — ceiling
-effect, fixtures too easy for frontier routers). Tooling shipped:
-examples/quickstart_real.py, scripts/run_matrix.py + matrix.config.json,
-skillpp/fixtures.py (one source of truth for the shipped sessions).
+ROADMAP items 2 + 3 tooling is DONE and committed (scaled fixtures, TfidfRouter,
+router-matrix configs, real-library harvester). What is MEASURED so far
+(results/scaled_matrix.md, real glm-5.3-flash rewriter):
 
-Next: ROADMAP.md item 2 — scale the benchmark so interference can appear:
+- token-overlap router: 46% -> 41% (refinement HURTS lexical overlap)
+- tfidf-cosine router: 53% -> 57% (refinement helps)
+- offline decay confirmed: MockRouter accuracy drops ~48% -> ~38% as the
+  scaled library grows (tests/test_scaled.py pins it)
 
-1. Grow the fixture set: from 2 sessions to 20+ (skillpp/fixtures.py or a
-   generator), trap pairs via paraphrase + near-duplicates with shifted
-   scope; add distractor skills sharing vocabulary with BOTH members of a
-   trap pair.
-2. Probe sets: from 4/session to 20+, including probes that should stay with
-   the OLD skill (regression).
-3. Run the scaled suite through scripts/run_matrix.py and commit results.
-4. Success = the qualitative claim shows up: accuracy decays as the library
-   grows, refinement recovers it. If frontier routers still sit at 100%,
-   that IS the finding — report it and move to item 3 (router matrix with
-   MockRouter/embedding routers where interference actually bites).
+PENDING: the two LLM-router arms (glm-5.3-flash, glm-4.6) of
+scripts/scaled_matrix.config.json and the whole scripts/harvest_real.py
+bench. A first attempt died to endpoint 429s (two concurrent runs on one
+subscription — since fixed: jobs must run sequentially); the re-run was
+killed by the OS memory-pressure reaper before backend 1 finished. Restart
+with (single process, ~3h):
+
+    export SKILLPP_BASE_URL="https://api.z.ai/api/coding/paas/v4"
+    export SKILLPP_MODEL="glm-5.3-flash"
+    export SKILLPP_API_KEY="$ZAI_API_KEY"
+    python scripts/run_matrix.py scripts/scaled_matrix.config.json \
+        && python scripts/harvest_real.py bench
+
+Then: update README "Honest status" with the full four-row scaled table +
+real-library table (numbers must match results/*.json exactly), then item 5
+(skill-issue integration) is next.
 
 ## After that
 

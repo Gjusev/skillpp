@@ -1,0 +1,10 @@
+{
+  "fixtures": "scaled",
+  "output": "scaled_matrix",
+  "backends": [
+    {"name": "token-overlap", "router": "mock", "base_url": "https://api.z.ai/api/coding/paas/v4", "model": "glm-5.3-flash"},
+    {"name": "tfidf-cosine", "router": "tfidf", "base_url": "https://api.z.ai/api/coding/paas/v4", "model": "glm-5.3-flash"},
+    {"name": "zai-coding", "router": "llm", "base_url": "https://api.z.ai/api/coding/paas/v4", "model": "glm-5.3-flash"},
+    {"name": "zai-coding", "router": "llm", "base_url": "https://api.z.ai/api/coding/paas/v4", "model": "glm-4.6"}
+  ]
+}

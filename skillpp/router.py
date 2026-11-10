@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import math
 import re
 from abc import ABC, abstractmethod
+from collections import Counter
 
 from .llm import LLMClient
 from .types import RouteResult, Skill
@@ -28,6 +30,34 @@ class MockRouter(BaseRouter):
             n = s.name.lower()
             name_bonus = 1.0 if any(w in n for w in q) else 0.0
             scores[s.name] = (len(q & d) / max(len(d), 1)) + name_bonus
+        chosen = max(skills, key=lambda s: scores[s.name])
+        return RouteResult(chosen=chosen.name, scores=scores)
+
+
+class TfidfRouter(BaseRouter):
+    """Offline stand-in for the embedding-similarity routers most tooling
+    actually uses (MCP tool pickers, skill matchers): TF-IDF bag-of-words
+    cosine between query and each description. Deterministic, zero-dep."""
+
+    def route(self, query: str, skills: list[Skill]) -> RouteResult:
+        docs = [re.findall(r"\w+", s.description.lower()) for s in skills]
+        q = re.findall(r"\w+", query.lower())
+        n = len(docs) or 1
+        df = Counter(w for d in docs for w in set(d))
+        idf = lambda w: math.log(1 + n / max(df[w], 1))  # query-only words: no dot with any doc anyway
+
+        def vec(words: list[str]) -> dict[str, float]:
+            tf = Counter(words)
+            return {w: (1 + math.log(c)) * idf(w) for w, c in tf.items()}
+
+        qv = vec(q)
+        scores: dict[str, float] = {}
+        for s, d in zip(skills, docs):
+            dv = vec(d)
+            dot = sum(c * dv[w] for w, c in qv.items() if w in dv)
+            norm = (sum(v * v for v in qv.values()) ** 0.5) or 1.0
+            dnorm = (sum(v * v for v in dv.values()) ** 0.5) or 1.0
+            scores[s.name] = dot / (norm * dnorm)
         chosen = max(skills, key=lambda s: scores[s.name])
         return RouteResult(chosen=chosen.name, scores=scores)
 

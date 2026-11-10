@@ -27,11 +27,10 @@ class ScriptedRewriter(MetadataRewriter):
         prev = library.closest_predecessor(new_skill)
         if prev is not None:
             supports = ", ".join(new_skill.domain_tags) or new_skill.name
-            excludes = prev.description.split(".")[0].lower()
             new_skill.description = (
                 f"Supports: {supports}. New skill, not a duplicate: "
                 f"differs from {prev.name} in purpose and scope. "
-                f"Does NOT cover: {excludes}."
+                f"Does NOT cover the tasks {prev.name} handles."
             )
         new_skill.refined = True
         return new_skill
