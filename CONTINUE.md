@@ -37,18 +37,26 @@ switch providers to "get it working".
 
 ## Current task (do this now)
 
-ROADMAP.md item 1 — first real-LLM run:
+ROADMAP.md item 1 (first real-LLM run) is DONE — see results/matrix.md and
+README "Honest status" (measured 2026-11-10: glm-5.3-flash and glm-4.6 both
+route the shipped fixtures at 100% before and after refinement — ceiling
+effect, fixtures too easy for frontier routers). Tooling shipped:
+examples/quickstart_real.py, scripts/run_matrix.py + matrix.config.json,
+skillpp/fixtures.py (one source of truth for the shipped sessions).
 
-1. Add `examples/quickstart_real.py`: InterferenceBench with
-   OpenAICompatRouter + MetadataRewriter(LLMClient()) over the shipped
-   sessions, configured via SKILLPP_BASE_URL / SKILLPP_MODEL env vars.
-2. Add `scripts/run_matrix.py`: benchmark across a list of (base_url, model)
-   pairs from a JSON config; writes `results/matrix.json` plus a markdown
-   table. One backend down must not crash the run.
-3. If a real endpoint is available (SKILLPP_BASE_URL set), run it and commit
-   results + markdown table into `results/`. If not, commit the tooling with
-   an empty results dir marked "not yet run" and stop there.
-4. Update README "Honest status" with whatever was actually measured.
+Next: ROADMAP.md item 2 — scale the benchmark so interference can appear:
+
+1. Grow the fixture set: from 2 sessions to 20+ (skillpp/fixtures.py or a
+   generator), trap pairs via paraphrase + near-duplicates with shifted
+   scope; add distractor skills sharing vocabulary with BOTH members of a
+   trap pair.
+2. Probe sets: from 4/session to 20+, including probes that should stay with
+   the OLD skill (regression).
+3. Run the scaled suite through scripts/run_matrix.py and commit results.
+4. Success = the qualitative claim shows up: accuracy decays as the library
+   grows, refinement recovers it. If frontier routers still sit at 100%,
+   that IS the finding — report it and move to item 3 (router matrix with
+   MockRouter/embedding routers where interference actually bites).
 
 ## After that
 

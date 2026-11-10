@@ -1,0 +1,36 @@
+[
+  {
+    "name": "zai-coding",
+    "model": "glm-5.3-flash",
+    "base_url": "https://api.z.ai/api/coding/paas/v4",
+    "accuracy_before": [
+      1.0,
+      1.0
+    ],
+    "accuracy_after": [
+      1.0,
+      1.0
+    ],
+    "refined_descriptions": {
+      "sql-explainer": "Explains what an existing SQL query does, step by step, in plain language, covering SELECT, JOINs, subqueries, CTEs, aggregations, and window functions. Unlike email-triage, which classifies inbound support email by intent, urgency, and language, this skill works only on SQL code, not messages. It does not write, rewrite, execute, optimize, or debug queries; does not design schemas, validate syntax against a live database, or perform data analysis; and does not cover any email triage tasks.",
+      "pdf-signature-check": "Verifies whether a PDF contains digital signatures and validates their cryptographic integrity. Read-only: inspects existing signatures and reports validity without altering the file, unlike pdf-redactor, which permanently removes personal data from PDFs. Supports detection of signed fields, tamper detection of signed content, and validity reporting. Does not redact, remove, or modify PDF content; does not create or apply signatures; does not validate certificate trust chains or check revocation; does not handle password-protected or encrypted PDFs."
+    }
+  },
+  {
+    "name": "zai-coding",
+    "model": "glm-4.6",
+    "base_url": "https://api.z.ai/api/coding/paas/v4",
+    "accuracy_before": [
+      1.0,
+      1.0
+    ],
+    "accuracy_after": [
+      1.0,
+      1.0
+    ],
+    "refined_descriptions": {
+      "sql-explainer": "Explains what a SQL query does, step by step, in plain language, covering clauses such as SELECT, JOIN, WHERE, GROUP BY, subqueries and CTEs. Unlike email-triage, which labels inbound support email by intent, this skill takes SQL text as input and returns an explanation, not a classification. It does not write, optimize, execute, validate, or debug queries, does not design or modify schemas, and does not translate natural language into SQL.",
+      "pdf-signature-check": "Reads a PDF and reports whether it contains digital signatures, checking each signature's validity and detecting whether signed content has been altered. Unlike pdf-redactor, which permanently removes personal data and rewrites the file, this skill is read-only and never modifies the PDF. Does not create, add, or remove signatures; does not redact, edit, or extract document content; does not encrypt, decrypt, or convert file formats."
+    }
+  }
+]

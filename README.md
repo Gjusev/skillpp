@@ -49,6 +49,16 @@ report = bench.run(sessions)
 print(report.summary())
 ```
 
+Or run the shipped fixtures end-to-end (writes into `results/`):
+
+```bash
+export SKILLPP_BASE_URL="https://api.z.ai/api/coding/paas/v4"  # or any OpenAI-compatible endpoint
+export SKILLPP_MODEL="glm-5.3-flash"
+export SKILLPP_API_KEY="<key>"
+python examples/quickstart_real.py   # one model -> results/first_run.json
+python scripts/run_matrix.py         # every backend in scripts/matrix.config.json -> results/matrix.{json,md}
+```
+
 ## Layout
 
 ```
@@ -58,8 +68,11 @@ skillpp/
   rewriter.py    the Skill++ move: REFINE_PROMPT + MetadataRewriter
   router.py      MockRouter (offline) + OpenAICompatRouter
   bench.py       InterferenceBench: sessions, probes, before/after accuracy
-tests/           offline end-to-end test with a scripted rewriter
-examples/        quickstart script
+  fixtures.py    shipped probe sets (base library + interference sessions)
+tests/           offline tests: scripted rewriter + matrix failure tolerance
+examples/        quickstart.py (demo) and quickstart_real.py (writes results/)
+scripts/         run_matrix.py + matrix.config.json (multi-backend runs)
+results/         committed benchmark output (matrix.md is the summary table)
 ```
 
 ## Findings so far
@@ -69,13 +82,33 @@ examples/        quickstart script
   itself with similarity 1.0 and refinement becomes a no-op).
 - Predecessor choice matters: character-similarity metrics pick the wrong
   predecessor on short descriptions; token Jaccard works better.
+- Token Jaccard still misses morphological variants: on the first real run it
+  picked `email-triage` (shares "language") over `sql-optimizer` ("queries"
+  ≠ "query" as tokens) as predecessor for `sql-explainer`. Lemma- or
+  substring-aware matching would fix this.
+- Frontier-class routers don't interfere on small libraries (see Honest
+  status) — interference needs scale, weaker router classes, or both.
 
 ## Honest status
 
-Implemented and unit-tested offline. The paper's headline numbers (36.4% →
-76.3% on 731 skills) have **not** been reproduced — the shipped probe sets are
-small handcrafted ones. Contributing: scale the probe sets, plug real skill
-libraries (Claude skills, MCP tool descriptions), try frontier routers.
+First real-LLM run done 2026-11-10, Z.ai Coding Plan endpoint, both router
+and rewriter on the same model (`python scripts/run_matrix.py`, shipped
+fixtures: 3 base skills, 2 interference sessions, 13 probes; raw output in
+`results/matrix.md` / `results/matrix.json` / `results/first_run.json`):
+
+| model (router + rewriter) | acc before | acc after |
+|---|---|---|
+| glm-5.3-flash | 100% (mean and final) | 100% |
+| glm-4.6 | 100% (mean and final) | 100% |
+
+That is a **ceiling effect, not evidence about the paper's claim**: the
+shipped fixture is too small to confuse these routers, so refinement has
+nothing to fix (each rewrite is a proper supports/differs/excludes rewrite —
+see the refined descriptions in `results/matrix.json`). The paper's headline
+numbers (36.4% → 76.3% on 731 skills) remain **unreproduced**. Next steps
+are ROADMAP items 2 (scale: 20+ sessions, 20+ probes each, distractor
+skills) and 3 (router matrix incl. token-overlap and embedding routers,
+where interference actually bites).
 
 ## Citation
 

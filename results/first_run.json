@@ -1,0 +1,28 @@
+{
+  "model": "glm-5.3-flash",
+  "base_url": "https://api.z.ai/api/coding/paas/v4",
+  "accuracy_before": [
+    1.0,
+    1.0
+  ],
+  "accuracy_after": [
+    1.0,
+    1.0
+  ],
+  "sessions": [
+    {
+      "new_skill": "sql-explainer",
+      "library_size": 4,
+      "refined_description": "Explains what a SQL query does, breaking each clause and operation into plain-language steps for a given query text. Unlike email-triage, which classifies inbound support messages by intent, urgency, and language, this skill reads query code, not email, and produces explanations rather than routing labels or priority scores. It does not write, edit, optimize, debug, or execute queries, tune performance, design schemas, convert between SQL dialects, analyze query results, or classify email or other message traffic.",
+      "acc_before": 1.0,
+      "acc_after": 1.0
+    },
+    {
+      "new_skill": "pdf-signature-check",
+      "library_size": 5,
+      "refined_description": "Checks PDF files for the presence of digital signatures and reports whether each signature is cryptographically valid. Unlike pdf-redactor, which permanently removes personal data from PDFs, this skill is read-only: it inspects signature status without altering the file. Does not sign documents, create or apply signatures, remove or replace signatures, redact content, or handle passwords and encryption.",
+      "acc_before": 1.0,
+      "acc_after": 1.0
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 # Roadmap
 
 Where this repo is and what's next. Current state: mechanism implemented,
-offline-tested, **no real-LLM run yet** (that's item 1).
+offline-tested, first real-LLM run done (ceiling effect — see README "Honest
+status"; that's item 2 now).
 
 ## Done
 
@@ -10,6 +11,10 @@ offline-tested, **no real-LLM run yet** (that's item 1).
 - Offline test suite (scripted rewriter, deterministic router), zero deps
 - Two real bugs found and fixed while building it (documented in README):
   self-match in predecessor lookup, wrong metric for predecessor choice
+- Item 1 — first real-LLM run (2026-11-10, Z.ai Coding Plan, glm-5.3-flash +
+  glm-4.6): tooling in examples/quickstart_real.py + scripts/run_matrix.py,
+  results in results/. Finding: 100% routing accuracy before AND after on
+  the shipped fixtures — too easy for frontier routers; scale needed.
 
 ## Next (in order)
 
