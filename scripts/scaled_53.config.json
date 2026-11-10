@@ -1,0 +1,7 @@
+{
+  "fixtures": "scaled",
+  "output": "scaled_53",
+  "backends": [
+    {"name": "zai-coding", "router": "llm", "base_url": "https://api.z.ai/api/coding/paas/v4", "model": "glm-5.3", "api_key_env": "SKILLPP_API_KEY"}
+  ]
+}

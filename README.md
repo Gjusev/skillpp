@@ -22,9 +22,11 @@ The `InterferenceBench` builds the paper's setting directly:
 3. route a probe set **before** refinement (draft metadata) and **after**
    refinement, and report the accuracy delta per session
 
-Two routers ship with it: a deterministic token-overlap `MockRouter` (offline,
-no network) and `OpenAICompatRouter` (any OpenAI-compatible endpoint — Ollama,
-GLM, OpenAI...).
+Three routers ship with it: a deterministic token-overlap `MockRouter`
+(offline, no network), a TF-IDF-cosine `TfidfRouter` (offline stand-in for
+the embedding-similarity routers most tooling uses), and
+`OpenAICompatRouter` (any OpenAI-compatible endpoint — Ollama, GLM,
+OpenAI...).
 
 ## Quickstart
 
@@ -66,13 +68,15 @@ skillpp/
   types.py       Skill + RouteResult (router sees name+description only)
   library.py     growing library + nearest-predecessor lookup (token Jaccard)
   rewriter.py    the Skill++ move: REFINE_PROMPT + MetadataRewriter
-  router.py      MockRouter (offline) + OpenAICompatRouter
+  router.py      MockRouter + TfidfRouter (offline) + OpenAICompatRouter
   bench.py       InterferenceBench: sessions, probes, before/after accuracy
   fixtures.py    shipped probe sets (base library + interference sessions)
-tests/           offline tests: scripted rewriter + matrix failure tolerance
+  scaled.py      scaled fixtures: 12 domains, 24 sessions, 179 probes
+tests/           offline tests: mechanism, decay, matrix tolerance, harvest
 examples/        quickstart.py (demo) and quickstart_real.py (writes results/)
-scripts/         run_matrix.py + matrix.config.json (multi-backend runs)
-results/         committed benchmark output (matrix.md is the summary table)
+scripts/         run_matrix.py (+ 3 configs), harvest_real.py (item 4 slice)
+results/         committed benchmark output (matrix.md / scaled_matrix.md /
+                 real_library.md are the summary tables)
 ```
 
 ## Findings so far
@@ -86,29 +90,68 @@ results/         committed benchmark output (matrix.md is the summary table)
   picked `email-triage` (shares "language") over `sql-optimizer` ("queries"
   ≠ "query" as tokens) as predecessor for `sql-explainer`. Lemma- or
   substring-aware matching would fix this.
-- Frontier-class routers don't interfere on small libraries (see Honest
-  status) — interference needs scale, weaker router classes, or both.
+- **The effect of rewriting is router-class dependent** (see Honest
+  status): pure token-overlap routing always gets worse; similarity
+  routers gain on generated fixtures (+3) but lose on human-written
+  near-duplicates (−3); LLM routers never lose and gain +3 on real
+  metadata. The refined text names the predecessor and echoes its
+  vocabulary — poison for word-matching, usable signal for a reader.
+- **Near-duplicate metadata exists in real, human-maintained libraries**:
+  harvesting 400 local Claude skills/marketplace entries found a pair with
+  byte-identical descriptions (token Jaccard 1.00) plus
+  langsmith↔phoenix-observability, autoglm-search-image↔websearch,
+  cirq↔qiskit and 8 more confusable pairs.
+- Benchmark numbers vary run to run: the rewriter samples at temperature
+  0.2, and each session is scored with earlier sessions' refined
+  descriptions still installed, so late-session accuracy depends on the
+  rewrite history. Means and sign directions were stable across our runs;
+  per-session numbers are noisy.
 
 ## Honest status
 
-First real-LLM run done 2026-11-10, Z.ai Coding Plan endpoint, both router
-and rewriter on the same model (`python scripts/run_matrix.py`, shipped
-fixtures: 3 base skills, 2 interference sessions, 13 probes; raw output in
-`results/matrix.md` / `results/matrix.json` / `results/first_run.json`):
+All numbers below were actually run (2026-11-10, Z.ai Coding Plan endpoint,
+glm-5.3-flash as rewriter unless noted). Raw output: `results/`.
 
-| model (router + rewriter) | acc before | acc after |
+**1. Shipped fixtures** (3 base skills, 2 sessions, 13 probes —
+`results/matrix.md`): glm-5.3-flash and glm-4.6 as router+rewriter both
+route 100% before and after. Ceiling effect; too easy.
+
+**2. Scaled fixtures** (`results/scaled_matrix.md`; 12 domains × 3 sibling
+skills, 24 sessions, 179 probes; library crowding induces real decay —
+token-overlap routing on drafts drops from ~49% (early sessions) to ~43%
+(late sessions), per-session arrays in `results/scaled_matrix.json`;
+`tests/test_scaled.py` pins the decay direction offline, not these values):
+
+| router | acc before (mean) | acc after (mean) |
 |---|---|---|
-| glm-5.3-flash | 100% (mean and final) | 100% |
-| glm-4.6 | 100% (mean and final) | 100% |
+| token-overlap (MockRouter) | 46% | 41% |
+| tfidf-cosine (TfidfRouter) | 52% | 56% |
+| LLM glm-5.3-flash | 99% | 100% |
+| LLM glm-4.6 | 100% | 100% |
+| LLM glm-5.3 | 100% | 100% |
 
-That is a **ceiling effect, not evidence about the paper's claim**: the
-shipped fixture is too small to confuse these routers, so refinement has
-nothing to fix (each rewrite is a proper supports/differs/excludes rewrite —
-see the refined descriptions in `results/matrix.json`). The paper's headline
-numbers (36.4% → 76.3% on 731 skills) remain **unreproduced**. Next steps
-are ROADMAP items 2 (scale: 20+ sessions, 20+ probes each, distractor
-skills) and 3 (router matrix incl. token-overlap and embedding routers,
-where interference actually bites).
+**3. Real skill libraries, first slice** (`results/real_library.md`; 12
+most-overlapping human-written pairs from 400 harvested local skills, 60-
+skill routing library, 6 LLM-generated probes per pair):
+
+| router | acc before | acc after |
+|---|---|---|
+| token-overlap | 22% | 15% |
+| tfidf-cosine | 38% | 35% |
+| LLM glm-5.3-flash | 89% | 92% |
+
+What this does and does not say: the paper's headline numbers (36.4% →
+76.3% on 731 skills) remain **unreproduced** — our LLM routers barely fail
+at ≤36 skills, so there is nothing for refinement to recover. What we can
+say: on generated fixtures, similarity-class routers gain (+3) and lexical
+overlap loses (−5); on human-written near-duplicates the rewrite hurts
+everything except the LLM router (−7 overlap, −3 tfidf, **+3 LLM**). The
+refined text names the predecessor and echoes its vocabulary — poison for
+anything that scores by shared words, signal for a router that reads the
+whole sentence. Caveats: scaled fixtures and their probes were authored
+together (favors the mechanism); real-library probes are LLM-generated from
+the descriptions themselves; rewriter run-to-run variance as noted in
+Findings.
 
 ## Citation
 

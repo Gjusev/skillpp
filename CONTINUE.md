@@ -37,31 +37,28 @@ switch providers to "get it working".
 
 ## Current task (do this now)
 
-ROADMAP items 2 + 3 tooling is DONE and committed (scaled fixtures, TfidfRouter,
-router-matrix configs, real-library harvester). What is MEASURED so far
-(results/scaled_matrix.md, real glm-5.3-flash rewriter):
+ROADMAP items 2, 3 and the first slice of 4 are DONE, measured and
+committed (2026-11-10; all numbers in README "Honest status" and results/):
 
-- token-overlap router: 46% -> 41% (refinement HURTS lexical overlap)
-- tfidf-cosine router: 53% -> 57% (refinement helps)
-- offline decay confirmed: MockRouter accuracy drops ~48% -> ~38% as the
-  scaled library grows (tests/test_scaled.py pins it)
+- scaled matrix (results/scaled_matrix.md + scaled_53.md): token-overlap
+  46%->41%, tfidf 52%->56%, glm-5.3-flash 99%->100%, glm-4.6 100%->100%,
+  glm-5.3 100%->100%
+- real-library slice (results/real_library.md, 12 human-written pairs,
+  re-run with the fixed block-scalar frontmatter parser): token-overlap
+  22%->15%, tfidf 38%->35%, glm-5.3-flash 89%->92%
+- decay: token-overlap drafts ~49% -> ~43% early-to-late sessions
+  (results/scaled_matrix.json; direction pinned offline by tests)
 
-PENDING: the two LLM-router arms (glm-5.3-flash, glm-4.6) of
-scripts/scaled_matrix.config.json and the whole scripts/harvest_real.py
-bench. A first attempt died to endpoint 429s (two concurrent runs on one
-subscription — since fixed: jobs must run sequentially); the re-run was
-killed by the OS memory-pressure reaper before backend 1 finished. Restart
-with (single process, ~3h):
+Headline: Skill++ rewriting as prescribed helps only LLM-class routers on
+real metadata (+3); it always hurts token-overlap, and hurts tfidf on real
+metadata (helps it on generated fixtures). The paper's 36.4%->76.3% remains
+unreproduced — LLM routers don't degrade at <=36 skills.
 
-    export SKILLPP_BASE_URL="https://api.z.ai/api/coding/paas/v4"
-    export SKILLPP_MODEL="glm-5.3-flash"
-    export SKILLPP_API_KEY="$ZAI_API_KEY"
-    python scripts/run_matrix.py scripts/scaled_matrix.config.json \
-        && python scripts/harvest_real.py bench
-
-Then: update README "Honest status" with the full four-row scaled table +
-real-library table (numbers must match results/*.json exactly), then item 5
-(skill-issue integration) is next.
+Next: ROADMAP item 5 (skill-issue integration) — needs a design decision
+from the author before any code: what counts as "task performance" in
+skill-issue, and how to pair its measurements with routing accuracy.
+Item 4 remainder: scale the real-library bench beyond 12 pairs / probe
+generation other than self-description.
 
 ## After that
 

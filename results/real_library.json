@@ -1,0 +1,459 @@
+{
+  "roots": [
+    "C:\\Users\\ahmia\\.claude\\skills",
+    "C:\\Users\\ahmia\\.claude\\plugins\\marketplaces\\academic-research-skills",
+    "C:\\Users\\ahmia\\.claude\\plugins\\marketplaces\\anthropic-agent-skills"
+  ],
+  "harvested": 400,
+  "pairs": [
+    {
+      "pair": [
+        "avv-grenzpruefung-brki-anbieter-eu",
+        "avv-grenzpruefung-datenschutz"
+      ],
+      "jaccard": 1.0,
+      "probes": {
+        "A": [
+          "Unsere Kanzlei will ein KI-Tool eines irischen Anbieters einsetzen \u2013 reicht der AVV oder brauchen wir trotzdem die Pr\u00fcfung nach \u00a7 43e BRAO?",
+          "Die Rechtsanwaltskammer will bei der Zulassung den AVV mit unserem KI-Dienstleister sehen \u2013 pr\u00fcft sie strenger, als es Art. 28 DSGVO verlangt?",
+          "Als Steuerberaterin: Ersetzt der abgeschlossene AVV die berufsrechtliche Pr\u00fcfung nach \u00a7 62a StBerG, wenn der Anbieter aus der EU kommt?"
+        ],
+        "B": [
+          "Was muss in unserem AVV mit dem KI-Dienstleister mindestens enthalten sein, damit er nach Art. 28 DSGVO korrekt ist?",
+          "Der KI-Anbieter verarbeitet Mandantendaten f\u00fcr uns \u2013 welche DSGVO-Pflichten bleiben trotz AVV bei uns als Kanzlei?",
+          "Unser Auftragsverarbeitungsvertrag ist seit zwei Jahren unver\u00e4ndert \u2013 m\u00fcssen wir ihn datenschutzrechtlich anpassen, seit wir zus\u00e4tzlich KI-Analyse einsetzen?"
+        ]
+      },
+      "a": {
+        "name": "avv-grenzpruefung-brki-anbieter-eu",
+        "description": "Kanzlei nutzt KI-Dienstleister und pr\u00fcft ob AVV nach Art. 28 DSGVO die berufsrechtliche Pr\u00fcfung ersetzt. Berufsrecht laeuft parallel und ist strenger als Datenschutzrecht. Normen Art. 28 DSGVO \u00a7\u00a7 43e BRAO 62a StBerG. Pr\u00fcfraster AVV-Pr\u00fcfpunkte Berufsrecht-Parallelitaet Abgrenzungspunkte Stolperfal",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\avv-grenzpruefung-brki-anbieter-eu\\SKILL.md"
+      },
+      "b": {
+        "name": "avv-grenzpruefung-datenschutz",
+        "description": "Kanzlei nutzt KI-Dienstleister und pr\u00fcft ob AVV nach Art. 28 DSGVO die berufsrechtliche Pr\u00fcfung ersetzt. Berufsrecht laeuft parallel und ist strenger als Datenschutzrecht. Normen Art. 28 DSGVO \u00a7\u00a7 43e BRAO 62a StBerG. Pr\u00fcfraster AVV-Pr\u00fcfpunkte Berufsrecht-Parallelitaet Abgrenzungspunkte Stolperfal",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\avv-grenzpruefung-datenschutz\\SKILL.md"
+      }
+    },
+    {
+      "pair": [
+        "avv-rolemix-getrennt-vs-gemeinsam",
+        "avv-rolemix-getrennt-vs-gemeinsam-verantwortlich"
+      ],
+      "jaccard": 0.6764705882352942,
+      "probes": {
+        "A": [
+          "Nach welchen Kriterien unterscheidet der EuGH im Fashion-ID-Urteil gemeinsame von getrennter Verantwortlichkeit?",
+          "Welche Indizien nennen die EDSA-Leitlinien 07/2020 daf\u00fcr, dass eine gemeinsame Verantwortlichkeit nach Art. 26 DSGVO vorliegt?",
+          "Wir sind f\u00fcr einen Verarbeitungsschritt Verantwortlicher und f\u00fcr einen anderen Auftragsverarbeiter \u2013 wie stuft der EuGH so eine Mischkonstellation ein?"
+        ],
+        "B": [
+          "Wann liegen zwei getrennte Verantwortliche vor und wann m\u00fcssen wir eine Vereinbarung nach Art. 26 DSGVO schlie\u00dfen?",
+          "Unser Dienstleister entscheidet mit, welche Daten er wie verarbeitet \u2013 ist er dann Auftragsverarbeiter oder gemeinsam mit uns Verantwortlicher?",
+          "Was muss in der Vereinbarung stehen, wenn wir mit einem Partner gemeinsam Verantwortliche sind?"
+        ]
+      },
+      "a": {
+        "name": "avv-rolemix-getrennt-vs-gemeinsam",
+        "description": "Abgrenzung Rollenmix Art. 4 Nr. 7 versus Art. 26 versus Art. 28 DSGVO. Wann sind zwei Akteure getrennte Verantwortliche wann gemeinsam Verantwortliche wann Verantwortlicher und Auftragsverarbeiter. Test-Schema f\u00fcr Mischkonstellationen mit Indizien aus EDSA-Leitlinien 07/2020 und EuGH-Rechtsprechu...",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\avv-rolemix-getrennt-vs-gemeinsam\\SKILL.md"
+      },
+      "b": {
+        "name": "avv-rolemix-getrennt-vs-gemeinsam-verantwortlich",
+        "description": "Abgrenzung Rollenmix Art: 4 Nr. 7 versus Art. 26 versus Art. 28 DSGVO. Wann sind zwei Akteure getrennte Verantwortliche wann gemeinsam Verantwortliche wann Verantwortlicher und Auftragsverarbeiter. Test-Schema f\u00fcr Mischkonstellatio...",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\avv-rolemix-getrennt-vs-gemeinsam-verantwortlich\\SKILL.md"
+      }
+    },
+    {
+      "pair": [
+        "autoglm-search-image",
+        "autoglm-websearch"
+      ],
+      "jaccard": 0.6071428571428571,
+      "probes": {
+        "A": [
+          "show me pictures of golden retriever puppies",
+          "find photos of the northern lights over Iceland",
+          "I need images of minimalist kitchen designs for inspiration"
+        ],
+        "B": [
+          "what's the current price of bitcoin",
+          "who won the Champions League final this year",
+          "latest news on the Artemis moon mission launch"
+        ]
+      },
+      "a": {
+        "name": "autoglm-search-image",
+        "description": "Use the AutoGLM image search API to search for related images based on a user query. Use this skill when the user needs to find images, source image assets, or browse image results. The token is fetched automatically from the local service at http://127.0.0.1:18432/get_token, so no manual environment variable setup is required.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\autoglm-search-image\\SKILL.md"
+      },
+      "b": {
+        "name": "autoglm-websearch",
+        "description": "Use the AutoGLM Web Search API to search the web. Use this skill when the user needs online search, up-to-date information, webpage retrieval, or other real-time web results. The token is fetched automatically from the local service at http://127.0.0.1:18432/get_token, so no manual environment variable setup is required.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\autoglm-websearch\\SKILL.md"
+      }
+    },
+    {
+      "pair": [
+        "autoglm-generate-image",
+        "autoglm-open-link"
+      ],
+      "jaccard": 0.515625,
+      "probes": {
+        "A": [
+          "Generate a picture of a golden retriever puppy playing in autumn leaves",
+          "I need an illustration of a futuristic city skyline at night",
+          "Draw a cozy cabin in a snowy pine forest"
+        ],
+        "B": [
+          "Summarize the article at https://example.com/science/black-holes-explained",
+          "What are the main points in this blog post? https://blog.example.org/remote-work-tips",
+          "Open this news link and tell me what happened: https://news.example.com/tech-launch"
+        ]
+      },
+      "a": {
+        "name": "autoglm-generate-image",
+        "description": "Use the AutoGLM text-to-image API to generate an image from a text prompt. Use this skill when the user wants image generation, text-to-image creation, or other AI image generation tasks. The token is fetched automatically from the local service at http://127.0.0.1:18432/get_token, so no manual environment variable setup is required.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\autoglm-generate-image\\SKILL.md"
+      },
+      "b": {
+        "name": "autoglm-open-link",
+        "description": "Use the AutoGLM Open Link API to open a specific webpage and extract its main body text. Use this skill when the user needs to read a webpage in detail, extract the full article text, or fetch page content for summarization or analysis. The token is fetched automatically from the local service at http://127.0.0.1:18432/get_token, so no manual environment variable setup is required.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\autoglm-open-link\\SKILL.md"
+      }
+    },
+    {
+      "pair": [
+        "langsmith-observability",
+        "phoenix-observability"
+      ],
+      "jaccard": 0.4722222222222222,
+      "probes": {
+        "A": [
+          "my LangChain agent works locally but fails in prod \u2014 how do I trace the exact failing run in LangSmith?",
+          "set up a golden dataset so I can run evals on every prompt change in LangSmith",
+          "I need dashboards for our production chatbot's cost and latency alerts in LangSmith"
+        ],
+        "B": [
+          "what's the easiest open-source way to trace my LLM app locally \u2014 can I self-host Phoenix in Docker?",
+          "my services already emit OpenTelemetry spans, can I point them at Phoenix to get LLM traces for free?",
+          "open the trace for this failed RAG query in Phoenix so I can see which chunks got retrieved at each step"
+        ]
+      },
+      "a": {
+        "name": "langsmith-observability",
+        "description": "LLM observability platform for tracing, evaluation, and monitoring. Use when debugging LLM applications, evaluating model outputs against datasets, monitoring production systems, or building systematic testing pipelines for AI applications.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\langsmith-observability\\SKILL.md"
+      },
+      "b": {
+        "name": "phoenix-observability",
+        "description": "Open-source AI observability platform for LLM tracing, evaluation, and monitoring. Use when debugging LLM applications with detailed traces, running evaluations on datasets, or monitoring production AI systems with real-time insights.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\phoenix-observability\\SKILL.md"
+      }
+    },
+    {
+      "pair": [
+        "autoglm-file-upload",
+        "autoglm-image-recognition"
+      ],
+      "jaccard": 0.4533333333333333,
+      "probes": {
+        "A": [
+          "Upload my screenshot.png and give me a shareable link",
+          "I need a URL for this contract.pdf so I can pass it to the translation API",
+          "Get a public link for the photo on my desktop so I can use it in the next step"
+        ],
+        "B": [
+          "What text is written on the sign in this photo?",
+          "Can you tell me what objects are in vacation.jpg?",
+          "Describe what's happening in this image"
+        ]
+      },
+      "a": {
+        "name": "autoglm-file-upload",
+        "description": "Use the AutoGLM Upload Mix API to upload local files such as images and documents, then obtain a file URL or resource ID for downstream API calls. The token is fetched automatically from the local service at http://127.0.0.1:18432/get_token, so no manual environment variable setup is required.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\autoglm-file-upload\\SKILL.md"
+      },
+      "b": {
+        "name": "autoglm-image-recognition",
+        "description": "Use the AutoGLM Image Recognition API to analyze and describe image content. Use this skill when the user needs image analysis, object or scene recognition, OCR-like text extraction, or a general image description. The token is fetched automatically from the local service at http://127.0.0.1:18432/get_token, so no manual environment variable setup is required. If the user provides a local image file, you must first run upload-mix.py to upload it and obtain a public URL before using this skill.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\autoglm-image-recognition\\SKILL.md"
+      }
+    },
+    {
+      "pair": [
+        "grill-me",
+        "grill-with-docs"
+      ],
+      "jaccard": 0.42105263157894735,
+      "probes": {
+        "A": [
+          "I'm defending our migration off Heroku in front of the exec team Friday \u2014 stress-test the plan until every weak point cracks.",
+          "Poke holes in my hackathon idea before I start coding tonight, I want the design airtight.",
+          "My MVP scope keeps ballooning \u2014 make me defend every feature on this list or cut it."
+        ],
+        "B": [
+          "We're deadlocked between Kafka and SQS for our event pipeline \u2014 work the decision hard with me and record it as an ADR so the team stops relitigating it.",
+          "Our codebase uses \"tenant,\" \"org,\" and \"workspace\" interchangeably and it's causing bugs \u2014 interrogate my multi-tenancy design and build a glossary as we nail down each term.",
+          "I need to pick an auth approach and justify it to future hires \u2014 push back on every tradeoff and keep a running record of what we decide and why."
+        ]
+      },
+      "a": {
+        "name": "grill-me",
+        "description": "A relentless interview to sharpen a plan or design.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\grill-me\\SKILL.md"
+      },
+      "b": {
+        "name": "grill-with-docs",
+        "description": "A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\grill-with-docs\\SKILL.md"
+      }
+    },
+    {
+      "pair": [
+        "internationales-geheimnisschutz",
+        "ki-tool-legal-tech-mandatsgeheimnis"
+      ],
+      "jaccard": 0.41935483870967744,
+      "probes": {
+        "A": [
+          "Mandant verlangt Vertraulichkeit bei Schiedsverfahren in der Schweiz und USA \u2013 was muss ich meinem Team anweisen?",
+          "Darf ich ausl\u00e4ndische Korrespondenzanw\u00e4lte einschalten, ohne den Geheimnisschutz zu verletzen?",
+          "Welche Organisationspflichten und Fristen gelten bei einem grenz\u00fcberschreitenden Mandat mit sensiblen Unterlagen?"
+        ],
+        "B": [
+          "Darf ich Mandantenakten zum Zusammenfassen in ein KI-Tool hochladen?",
+          "Welche Risiken hat der Einsatz von ChatGPT in der Kanzlei f\u00fcr die Verschwiegenheit?",
+          "Was muss ich pr\u00fcfen, bevor wir eine Legal-Tech-Cloud f\u00fcr Mandatsdaten einf\u00fchren?"
+        ]
+      },
+      "a": {
+        "name": "internationales-geheimnisschutz",
+        "description": "Anw\u00e4lte: internationales mandat und geheimnisschutz - Organisationspflichten, Pr\u00e4vention, Team-Anweisung und Fristenkontrolle; mit Live-Normencheck, Kammerlogik, Verh\u00e4ltnism\u00e4\u00dfigkeit, Belegplan und n\u00e4chstem Schritt im Berufsrecht Anwaelte.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\internationales-geheimnisschutz\\SKILL.md"
+      },
+      "b": {
+        "name": "ki-tool-legal-tech-mandatsgeheimnis",
+        "description": "Anw\u00e4lte: ki tool in der kanzlei - Kaltstart mit Faktenmatrix, Risikoampel und fehlenden Unterlagen; mit Live-Normencheck, Kammerlogik, Verh\u00e4ltnism\u00e4\u00dfigkeit, Belegplan und n\u00e4chstem Schritt im Berufsrecht Anwaelte.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\ki-tool-legal-tech-mandatsgeheimnis\\SKILL.md"
+      }
+    },
+    {
+      "pair": [
+        "drawio-skill",
+        "excalidraw"
+      ],
+      "jaccard": 0.4,
+      "probes": {
+        "A": [
+          "Create an ER diagram of our e-commerce schema \u2014 users, orders, products, payments \u2014 with crow's foot notation and export it as a PDF for the design doc",
+          "I need a swimlane diagram of our loan approval process showing handoffs between sales, underwriting, and legal, styled to match our corporate template",
+          "Draw a Transformer architecture figure with encoder-decoder blocks and attention layers for my ML paper \u2014 clean look, SVG export please"
+        ],
+        "B": [
+          "Can you sketch a quick flowchart of how a support ticket moves from intake to resolution? Nothing fancy, just for standup tomorrow",
+          "I'm brainstorming features for our new app \u2014 make me a rough mind map in that hand-drawn style I can tweak in Excalidraw",
+          "Throw together a simple diagram of our three microservices \u2014 gateway, auth, billing \u2014 for my README, sketchy look is fine"
+        ]
+      },
+      "a": {
+        "name": "drawio-skill",
+        "description": "Use when the user requests diagrams, flowcharts, architecture diagrams, ER diagrams, UML / sequence / class diagrams, network topology, ML/DL model figures (Transformer/CNN/LSTM), mind maps, or any visualization. Also use proactively when explaining systems with 3+ components, complex data flows, or relationships that benefit from visual representation. Best suited when the diagram needs custom styling, rich shape vocabulary, swimlanes, or exportable images (PNG/SVG/PDF/JPG). Generates .drawio XML and exports locally via the native draw.io desktop CLI.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\drawio-skill\\SKILL.md"
+      },
+      "b": {
+        "name": "excalidraw",
+        "description": "Use when user requests diagrams, flowcharts, architecture charts, or visualizations. Also use proactively when explaining systems with 3+ components, complex data flows, or relationships that benefit from visual representation. Generates .excalidraw files and exports to PNG/SVG via Kroki API or locally using excalidraw-brute-export-cli.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\excalidraw\\SKILL.md"
+      }
+    },
+    {
+      "pair": [
+        "orca-cli",
+        "orchestration"
+      ],
+      "jaccard": 0.390625,
+      "probes": {
+        "A": [
+          "Set up a child worktree off main and spawn a codex agent in it to fix the flaky auth tests",
+          "Send \"npm run dev\" to the terminal in the payments worktree and wait until the server is up",
+          "Share the benchmark report as a public artifact link I can send to the team"
+        ],
+        "B": [
+          "Have one worker write the DB migration while another updates the API client, and tell me when both are done",
+          "Run a pipeline where the research worker feeds its findings to the writing worker, and pause for my approval before publishing",
+          "Keep an eye on the three workers on the indexer task and ping me if any of them escalates or finishes early"
+        ]
+      },
+      "a": {
+        "name": "orca-cli",
+        "description": "Use the public `orca` CLI to operate Orca-managed worktrees, folder contexts, terminals, repos, automations, artifacts, skill sharing, worktree comments, and the browser embedded inside the Orca app. Use when the user says \"$orca-cli\", \"use orca cli\", \"Orca worktree\", \"child worktree\", \"cardStatus\", \"spawn codex/claude in a worktree\", \"read/wait/send Orca terminal\", \"terminal send\", \"full handoff\", \"handover\", \"give this to another agent\", \"another worktree\", \"Orca browser\", \"orca artifacts\", \"share HTML/Markdown\", \"public artifact link\", \"share skills\", or \"control the browser inside Orca\". Prefer this over raw `git worktree`, ad hoc PTYs, Playwright, or Computer Use when the task touches Orca-managed state. Use Computer Use for external browser windows, webviews, or desktop UI only when the task requires OS/window-level control such as focus, menus, dialogs, coordinates, or screenshots. Use `orca-cli` for Orca's embedded pages and a page-automation tool such as Playwright or CDP for external pages.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\orca-cli\\SKILL.md"
+      },
+      "b": {
+        "name": "orchestration",
+        "description": "Coordinate supervised Orca workers: threaded messages, blocking ask/reply, task dispatch, worker_done/escalation waits, task DAGs, decision gates, coordinator loops, and decomposing work across agents. Use `orca-cli` for full ownership handoffs \u2014 \"hand off\", \"handoff\", \"handover\", \"give this to another agent\", \"another worktree\" \u2014 unless asked to supervise, monitor, or coordinate a DAG, and for terminal control, lightweight terminal prompts, shell commands, Orca worktree management, and reading or waiting on terminals. Use Computer Use for external browser windows, webviews, Orca app UI, or desktop UI outside Orca's embedded browser only when the task requires OS/window-level control such as focus, menus, dialogs, coordinates, or screenshots. Use `orca-cli` for Orca's embedded pages and a page-automation tool such as Playwright or CDP for external pages.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\orchestration\\SKILL.md"
+      }
+    },
+    {
+      "pair": [
+        "antislop-copywriting",
+        "antislop-ui"
+      ],
+      "jaccard": 0.3870967741935484,
+      "probes": {
+        "A": [
+          "rewrite my landing page hero, it sounds like every other AI startup",
+          "my email subject lines are way too corporate, make them punchier",
+          "give me CTA button text that doesn't just say \"Get Started\""
+        ],
+        "B": [
+          "my dashboard feels cramped, help me fix the spacing and layout",
+          "pick a color palette for a fintech app targeting gen z",
+          "the hover animation on my cards feels janky, how should the easing work?"
+        ]
+      },
+      "a": {
+        "name": "antislop-copywriting",
+        "description": "Copy and text skill for antislop. Use when writing or editing prose: headlines, tone, CTAs, and anti-AI-writing patterns. Load with the core.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\antislop-copywriting\\SKILL.md"
+      },
+      "b": {
+        "name": "antislop-ui",
+        "description": "UI and visual skill for antislop. Use when building or editing any interface: color, layout, components, motion. Load with the core.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\antislop-ui\\SKILL.md"
+      }
+    },
+    {
+      "pair": [
+        "cirq",
+        "qiskit"
+      ],
+      "jaccard": 0.38,
+      "probes": {
+        "A": [
+          "How do I add depolarizing and readout noise to my circuit simulation in Cirq so I can see how it'll behave on real hardware?",
+          "Can I submit my circuit to Google's Quantum Computing Service and run it on Sycamore from a notebook?",
+          "How do I place gates at specific gridqubit coordinates so my circuit matches the Google device's 2D qubit layout?"
+        ],
+        "B": [
+          "What's the best way to submit an Estimator job with dynamical decoupling enabled to ibm_torino via Qiskit Runtime?",
+          "How do I transpile my 20-qubit circuit to minimize swaps for IBM's heavy-hex topology?",
+          "Can I apply zero-noise extrapolation to mitigate errors on my IBM Quantum production job?"
+        ]
+      },
+      "a": {
+        "name": "cirq",
+        "description": "Google quantum computing framework. Use when targeting Google Quantum AI hardware, designing noise-aware circuits, or running quantum characterization experiments. Best for Google hardware, noise modeling, and low-level circuit design. For IBM hardware use qiskit; for quantum ML with autodiff use pennylane; for physics simulations use qutip.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\cirq\\SKILL.md"
+      },
+      "b": {
+        "name": "qiskit",
+        "description": "IBM quantum computing framework. Use when targeting IBM Quantum hardware, working with Qiskit Runtime for production workloads, or needing IBM optimization tools. Best for IBM hardware execution, quantum error mitigation, and enterprise quantum computing. For Google hardware use cirq; for gradient-based quantum ML use pennylane; for open quantum system simulations use qutip.",
+        "source": "C:\\Users\\ahmia\\.claude\\skills\\qiskit\\SKILL.md"
+      }
+    }
+  ],
+  "results": [
+    {
+      "router": "tfidf-cosine",
+      "acc_before": 0.37500000000000006,
+      "acc_after": 0.34722222222222215,
+      "per_session_before": [
+        0.5,
+        0.5,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.5,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "per_session_after": [
+        0.5,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.5,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.5,
+        0.16666666666666666,
+        0.5,
+        0.16666666666666666,
+        0.6666666666666666
+      ]
+    },
+    {
+      "router": "token-overlap",
+      "acc_before": 0.2222222222222222,
+      "acc_after": 0.15277777777777776,
+      "per_session_before": [
+        0.5,
+        0.3333333333333333,
+        0.0,
+        0.3333333333333333,
+        0.0,
+        0.0,
+        0.6666666666666666,
+        0.5,
+        0.0,
+        0.0,
+        0.3333333333333333,
+        0.0
+      ],
+      "per_session_after": [
+        0.5,
+        0.16666666666666666,
+        0.0,
+        0.16666666666666666,
+        0.0,
+        0.0,
+        0.5,
+        0.3333333333333333,
+        0.0,
+        0.0,
+        0.16666666666666666,
+        0.0
+      ]
+    },
+    {
+      "router": "llm",
+      "acc_before": 0.8888888888888888,
+      "acc_after": 0.9166666666666669,
+      "per_session_before": [
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.8333333333333334,
+        1.0,
+        0.8333333333333334,
+        1.0
+      ],
+      "per_session_after": [
+        0.8333333333333334,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.8333333333333334,
+        1.0,
+        0.8333333333333334,
+        1.0
+      ]
+    }
+  ]
+}

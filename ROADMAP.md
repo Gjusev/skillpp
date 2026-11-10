@@ -1,8 +1,7 @@
 # Roadmap
 
-Where this repo is and what's next. Current state: mechanism implemented,
-offline-tested, first real-LLM run done (ceiling effect — see README "Honest
-status"; that's item 2 now).
+Where this repo is and what's next. Current state: items 1–3 done and
+measured, item 4 first slice done (see README "Honest status").
 
 ## Done
 
@@ -15,6 +14,19 @@ status"; that's item 2 now).
   glm-4.6): tooling in examples/quickstart_real.py + scripts/run_matrix.py,
   results in results/. Finding: 100% routing accuracy before AND after on
   the shipped fixtures — too easy for frontier routers; scale needed.
+- Item 2 — scaled benchmark (24 sessions, 179 probes, 36-skill final
+  library): crowding induces real decay for weak routers (token-overlap
+  drafts ~49% -> ~43% early-to-late, results/scaled_matrix.json; direction
+  pinned offline by tests/test_scaled.py). results/scaled_matrix.md.
+- Item 3 — router matrix: token-overlap 46%->41% (rewriting HURTS),
+  tfidf-cosine 52%->56% (helps on generated fixtures), glm-5.3-flash
+  99%->100%, glm-4.6 and glm-5.3 100%->100% (nothing to fix at this
+  scale). Skill++'s benefit lives below the LLM-router class here.
+- Item 4, first slice — real libraries: scripts/harvest_real.py found the
+  interference precondition in 400 human-written local skills (incl. a
+  byte-identical description pair); benched the top 12 pairs
+  (results/real_library.md): token-overlap 22%->15%, tfidf 38%->35%,
+  glm-5.3-flash 89%->92% — on real metadata only the LLM router benefits.
 
 ## Next (in order)
 
