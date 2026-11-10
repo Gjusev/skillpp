@@ -262,8 +262,9 @@ def scaled_sessions() -> list[Session]:
     """24 sessions: sessions 1-12 add each domain's variant 1, 13-24 variant 2.
 
     Probes per session: the new variant's 3 queries + the domain base skill's
-    3 (must the old skill survive its new sibling?) + 2 regression probes
-    from earlier sessions (deterministic picks).
+    3 (must the old skill survive its new sibling?) + up to 2 regression
+    probes: the domain's other variant (once it exists) and the previous
+    session's new skill (session 1 has neither). 179 probes in total.
     """
     sessions: list[Session] = []
     added: list[tuple[str, str]] = []  # (name, first query) of prior variants

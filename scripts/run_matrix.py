@@ -131,7 +131,8 @@ def main(argv: list[str]) -> int:
                 f"final {r['accuracy_before'][-1]:.0%} -> {r['accuracy_after'][-1]:.0%}"
             )
         except Exception as e:  # one backend down must not kill the run
-            rows.append({"name": b.get("name", "?"), "model": b.get("model", "?"), "error": f"{type(e).__name__}: {e}"})
+            rows.append({"name": b.get("name", "?"), "router": b.get("router", "llm"),
+                         "model": b.get("model", "?"), "error": f"{type(e).__name__}: {e}"})
             print(f"   ERROR {type(e).__name__}: {e}")
 
     out_dir.mkdir(parents=True, exist_ok=True)

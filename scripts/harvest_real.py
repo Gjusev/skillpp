@@ -50,6 +50,34 @@ DISTRACTORS = 48    # additional harvested skills in the base library
 PROBES_PER = 3
 
 
+def _frontmatter_fields(text: str) -> dict[str, str]:
+    """Parse name/description from SKILL.md YAML frontmatter, including
+    block scalars (`description: >-` followed by indented lines)."""
+    m = re.match(r"^---\n(.*?)\n---", text, re.S)
+    if not m:
+        return {}
+    fields: dict[str, str] = {}
+    lines = m.group(1).splitlines()
+    i = 0
+    while i < len(lines):
+        km = re.match(r"^(name|description):\s*(.*)$", lines[i])
+        if not km:
+            i += 1
+            continue
+        key, val = km.group(1), km.group(2).strip()
+        if val in (">", ">-", "|", "|-"):  # block scalar: consume indented lines
+            block: list[str] = []
+            i += 1
+            while i < len(lines) and (lines[i].startswith((" ", "\t")) or not lines[i].strip()):
+                block.append(lines[i].strip())
+                i += 1
+            fields[key] = " ".join(b for b in block if b)
+            continue
+        fields[key] = val.strip("\"'")
+        i += 1
+    return fields
+
+
 def harvest(roots: list[Path]) -> list[dict]:
     """name+description from SKILL.md frontmatter; simple key: value parsing."""
     skills: list[dict] = []
@@ -61,14 +89,9 @@ def harvest(roots: list[Path]) -> list[dict]:
             if len(skills) >= MAX_SKILLS:
                 break
             text = path.read_text(encoding="utf-8", errors="replace")
-            m = re.match(r"^---\n(.*?)\n---", text, re.S)
-            if not m:
-                continue
-            fields = dict(
-                re.findall(r"^(name|description):\s*(.+)$", m.group(1), re.M)
-            )
-            name = fields.get("name", "").strip().strip("\"'")
-            desc = fields.get("description", "").strip().strip("\"'")
+            fields = _frontmatter_fields(text)
+            name = fields.get("name", "").strip()
+            desc = fields.get("description", "").strip()
             if not name or not desc or name in seen:
                 continue
             seen.add(name)
