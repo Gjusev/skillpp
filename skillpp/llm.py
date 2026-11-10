@@ -6,6 +6,7 @@ httpx imports lazily so the offline test suite needs zero dependencies.
 from __future__ import annotations
 
 import os
+import time
 
 
 class LLMClient:
@@ -30,15 +31,29 @@ class LLMClient:
     def complete(self, prompt: str) -> str:
         import httpx  # lazy: offline test runs never need it
 
-        resp = httpx.post(
-            f"{self.base_url}/chat/completions",
-            headers={"Authorization": f"Bearer {self.api_key}"},
-            json={
-                "model": self.model,
-                "messages": [{"role": "user", "content": prompt}],
-                "temperature": 0.2,
-            },
-            timeout=60,
-        )
-        resp.raise_for_status()
-        return resp.json()["choices"][0]["message"]["content"]
+        # retry transient failures (transport, 408/429/5xx) so one hiccup
+        # doesn't kill a benchmark run; auth/bad-request errors raise at once
+        last_err: Exception | None = None
+        for attempt in range(3):
+            try:
+                resp = httpx.post(
+                    f"{self.base_url}/chat/completions",
+                    headers={"Authorization": f"Bearer {self.api_key}"},
+                    json={
+                        "model": self.model,
+                        "messages": [{"role": "user", "content": prompt}],
+                        "temperature": 0.2,
+                    },
+                    timeout=60,
+                )
+                resp.raise_for_status()
+                return resp.json()["choices"][0]["message"]["content"]
+            except httpx.HTTPStatusError as e:
+                if e.response.status_code not in (408, 429) and e.response.status_code < 500:
+                    raise
+                last_err = e
+            except httpx.TransportError as e:
+                last_err = e
+            if attempt < 2:  # no sleep after the final attempt
+                time.sleep(2 * (attempt + 1))
+        raise last_err  # type: ignore[misc]

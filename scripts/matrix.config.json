@@ -1,0 +1,16 @@
+{
+  "backends": [
+    {
+      "name": "zai-coding",
+      "base_url": "https://api.z.ai/api/coding/paas/v4",
+      "model": "glm-5.3-flash",
+      "api_key_env": "SKILLPP_API_KEY"
+    },
+    {
+      "name": "zai-coding",
+      "base_url": "https://api.z.ai/api/coding/paas/v4",
+      "model": "glm-4.6",
+      "api_key_env": "SKILLPP_API_KEY"
+    }
+  ]
+}

@@ -59,5 +59,7 @@ class OpenAICompatRouter(BaseRouter):
                     chosen = name
                     break
         if chosen is None:
-            chosen = skills[0].name
+            # the model failed to name a skill: count it as a miss (picking
+            # skills[0] would silently score probes that expect the first skill)
+            chosen = ""
         return RouteResult(chosen=chosen, raw=raw)

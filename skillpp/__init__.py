@@ -10,6 +10,7 @@ This is an independent, unofficial implementation. Cite the paper first.
 
 from .types import Skill, RouteResult
 from .library import SkillLibrary
+from .llm import LLMClient
 from .rewriter import MetadataRewriter
 from .router import BaseRouter, MockRouter, OpenAICompatRouter
 from .bench import BenchmarkReport, InterferenceBench, Session, run_benchmark
@@ -19,6 +20,7 @@ __all__ = [
     "Skill",
     "RouteResult",
     "SkillLibrary",
+    "LLMClient",
     "MetadataRewriter",
     "BaseRouter",
     "MockRouter",
