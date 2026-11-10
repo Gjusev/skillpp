@@ -1,10 +1,14 @@
 """Quickstart: run the interference benchmark with a real LLM (rewriter + router).
 
-Set SKILLPP_BASE_URL and SKILLPP_MODEL first (any OpenAI-compatible endpoint —
-Ollama works: SKILLPP_BASE_URL=http://localhost:11434/v1 SKILLPP_MODEL=qwen2.5:7b).
+Defaults to the Z.ai Coding Plan endpoint (flat subscription — no per-call
+billing). Or point SKILLPP_BASE_URL anywhere OpenAI-compatible (e.g. Ollama:
+SKILLPP_BASE_URL=http://localhost:11434/v1 SKILLPP_MODEL=qwen2.5:7b).
 """
 
 import os
+
+os.environ.setdefault("SKILLPP_BASE_URL", "https://api.z.ai/api/coding/paas/v4")
+os.environ.setdefault("SKILLPP_MODEL", "glm-5.3-flash")
 
 from skillpp import (
     InterferenceBench,
